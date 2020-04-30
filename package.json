@@ -8,7 +8,9 @@
   },
   "main": "lib",
   "scripts": {
-    "test": "mocha test/lib/bin/*.* --compilers coffee:coffee-script/register && mocha test/lib/building/*.* --compilers coffee:coffee-script/register && mocha test/lib/packaging/*.* --compilers coffee:coffee-script/register && mocha test/lib/scaffolding/*.* --compilers coffee:coffee-script/register && mocha test/lib/testing/*.* --compilers coffee:coffee-script/register && mocha test/lib/utils/*.* --compilers coffee:coffee-script/register"
+    "test": "mocha test/lib/bin/*.* --compilers coffee:coffee-script/register && mocha test/lib/building/*.* --compilers coffee:coffee-script/register && mocha test/lib/packaging/*.* --compilers coffee:coffee-script/register && mocha test/lib/scaffolding/*.* --compilers coffee:coffee-script/register && mocha test/lib/testing/*.* --compilers coffee:coffee-script/register && mocha test/lib/utils/*.* --compilers coffee:coffee-script/register",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "electron",
@@ -27,7 +29,8 @@
     "gulp-json-editor": "^2.2.1",
     "inquirer": "^3.0.1",
     "merge-config": "^2.0.0",
-    "underscore.string": "^3.3.4"
+    "underscore.string": "^3.3.4",
+    "snyk": "^1.316.1"
   },
   "preferGlobal": "true",
   "bin": {
@@ -51,5 +54,6 @@
     "mocha": "^3.2.0",
     "spectron": "^3.6.0",
     "webpack-stream": "^3.2.0"
-  }
+  },
+  "snyk": true
 }
